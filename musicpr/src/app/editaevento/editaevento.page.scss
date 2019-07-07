@@ -1,21 +1,45 @@
 .inputsize{
-  width: 250px;
+  width: 200px;
 }
 ion-input{
   border-radius: 10px !important;
   border: 1px solid #808080 !important;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
 }
-ion-input.piccoli{
-  width: 125px;
+ion-input.ora{
+  position: relative;
+  margin-left: 70px;
+  width: 80px;
+  float:left;
+  display:block;
+  left: 50px;
 }
 ion-input.descrizione{
-  width: 250px;
+  width: 200px;
   height: 100px;
 }
-ion-input.data
-{
+ion-input.data{
+
+  width: 80px;
+  float:left;
+  display:block;
+  left: 80px;
+}
+#image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 35%;
+}
+.salvabutton{
+  text-align: center;
+}
+ion-button{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 
 }

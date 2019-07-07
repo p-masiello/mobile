@@ -49,6 +49,7 @@ export class MappaPage implements OnInit {
     });
   }
 
+
   getAddressFromCoords(lattitude, longitude) {
     console.log('getAddressFromCoords ' + lattitude + ' ' + longitude);
     const options: NativeGeocoderOptions = {
@@ -78,6 +79,7 @@ export class MappaPage implements OnInit {
 
   }
 }
+
 
 
 

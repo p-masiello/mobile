@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'pagamento', loadChildren: './pagamento/pagamento.module#PagamentoPageModule' },
   { path: 'editaevento', loadChildren: './editaevento/editaevento.module#EditaeventoPageModule' },
   { path: 'profiloutente', loadChildren: './profiloutente/profiloutente.module#ProfiloutentePageModule' },
+  { path: 'dettagliutente', loadChildren: './dettagliutente/dettagliutente.module#DettagliutentePageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
 ];
 
 @NgModule({

@@ -1,9 +1,41 @@
+
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>dettaglievento</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center="center">Dettagli Evento</ion-title>
+    <ion-icon id="iconcina" align-items-end="right" name="contact" (click)="vai()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-slides [pager]="true">
+    <ion-slide>
+      <img src="../assets/musipr/LOGO2.JPG">
+    </ion-slide>
+    <ion-slide>
+      <img src="../assets/musipr/LOGO2.JPG">
+    </ion-slide>
+  </ion-slides>
 
+  <h2>Vasco Arrossi</h2>
+  <h3>Lo concierto</h3>
+  <h5>Descrizione Evento</h5>
+  <p>Lorem ipsum dolor sit amet, consectetur<br>
+    adipiscing elit, sed do eiusmod tempor <br>
+    incididunt ut labore et
+    dolore magna aliqua.</p>
+  <ion-button >DonaDioCan</ion-button>
+  <ion-item>
+    <ion-thumbnail slot="start" >
+      <img src="../assets/musipr/LOGO2.JPG">
+    </ion-thumbnail>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button  color="red">
+      <ion-icon  id="navigation" name="compass"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

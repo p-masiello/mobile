@@ -1,0 +1,28 @@
+#navigation{
+  color: red;
+  height: 60px;
+  width: 60px;
+}
+#iconcina{
+  position: absolute;
+  left: 320px;
+  bottom: 15px;
+  height: 30px;
+  width: 30px;
+
+}
+ion-title{
+  right: 50px;
+}
+ion-slide{
+  height: 250px;
+}
+ion-slide.bullet-background{
+  background-color: #86888f;
+}
+ion-slide.bullet-background-active{
+  color: #f04141;
+}
+p{
+  font-size: small;
+}

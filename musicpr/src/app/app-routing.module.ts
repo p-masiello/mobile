@@ -9,6 +9,12 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'dettagliorganizzatore', loadChildren: './dettagliorganizzatore/dettagliorganizzatore.module#DettagliorganizzatorePageModule' },
+  { path: 'chatlist', loadChildren: './chatlist/chatlist.module#ChatlistPageModule' },
+  { path: 'donazione', loadChildren: './donazione/donazione.module#DonazionePageModule' },
+  { path: 'acquisto', loadChildren: './acquisto/acquisto.module#AcquistoPageModule' },
+  { path: 'pagamento', loadChildren: './pagamento/pagamento.module#PagamentoPageModule' },
+  { path: 'editaevento', loadChildren: './editaevento/editaevento.module#EditaeventoPageModule' },
+  { path: 'profiloutente', loadChildren: './profiloutente/profiloutente.module#ProfiloutentePageModule' },
 ];
 
 @NgModule({

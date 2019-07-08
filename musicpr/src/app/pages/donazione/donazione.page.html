@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/dettaglievento"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-center="center">Donazione</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-slides [pager]="true">
+      <ion-slide>
+        <img src="../assets/musipr/LOGO2.JPG">
+      </ion-slide>
+      <ion-slide>
+        <img src="../assets/musipr/LOGO2.JPG">
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div>
+    <ion-progress-bar color="tertiary" mode="md" type="determinate" value="0.5"></ion-progress-bar>
+    <ion-button color="tertiary" class="dona" routerDirection="forward" routerLink="/pagamento">Dona</ion-button>
+  </div>
+
+
+
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail>
+        <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
+      </ion-thumbnail>
+      <ion-label>
+        <p>Gigino ha donato 10^20€!</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

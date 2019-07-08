@@ -1,66 +1,14 @@
-
 <ion-header>
   <ion-toolbar>
-    <ion-title align-title="center" >
-      <div text-center="center">
-        <img routerLink="/dettaglievento" routerDirection="forward" height="80" src="../assets/musipr/LOGO2.JPG">
-      </div>
+    <ion-title>
+      Ionic Blank
     </ion-title>
-  </ion-toolbar >
+  </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-  <ion-searchbar [showCancelButton]="true" placeholder="Non funziono non so perchè" [animated]="true">
-  </ion-searchbar>
   <div class="ion-padding">
-    <ion-list>
-
-      <ion-item >
-
-
-        <ion-thumbnail slot="start" >
-          <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
-        </ion-thumbnail>
-        <ion-label >
-          <h2 >Vasco</h2>
-          <p>Il mondo che vorrei</p>
-          <p>Dom-25 Mag</p>
-          <ion-icon class=iconcina name="ios-contact"></ion-icon>
-        </ion-label>
-
-      </ion-item >
-
-    </ion-list>
+    The world is your oyster.
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/editaevento" routerDirection="root">
-    <ion-fab-button color="white"  >
-      <ion-icon  name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-
 </ion-content>
-
-
-<ion-tabs>
-  <ion-tab-bar id=tab  slot="bottom">
-    <ion-tab-button tab="tab1" routerDirection="root" routerLink="/mappa">
-      <ion-icon class=icon id=mappa name="ios-map"></ion-icon>
-      <ion-label class=icona  >Mappa</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="tab2" routerLink="/home" routerDirection="root">
-      <ion-icon class=icon name="ios-List"></ion-icon>
-      <ion-label class=icona>Lista</ion-label>
-    </ion-tab-button>
-    <ion-tab-button  tab="tab3" routerLink="/chatlist" routerDirection="root">
-      <ion-icon class=icon  name="ios-chatboxes"></ion-icon>
-      <ion-label class=icona >Chat</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="tab4" routerLink="/profiloutente" routerDirection="root">
-      <ion-icon class=icon name="contact"></ion-icon>
-      <ion-label class=icona>Profilo</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
-

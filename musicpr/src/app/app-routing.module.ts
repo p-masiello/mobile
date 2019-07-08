@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes  } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'lista', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'mappa', loadChildren: './mappa/mappa.module#MappaPageModule' },
-  { path: 'dettaglievento', loadChildren: './dettaglievento/dettaglievento.module#DettaglieventoPageModule' },
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'dettagliorganizzatore', loadChildren: './dettagliorganizzatore/dettagliorganizzatore.module#DettagliorganizzatorePageModule' },
-  { path: 'chatlist', loadChildren: './chatlist/chatlist.module#ChatlistPageModule' },
-  { path: 'donazione', loadChildren: './donazione/donazione.module#DonazionePageModule' },
-  { path: 'acquisto', loadChildren: './acquisto/acquisto.module#AcquistoPageModule' },
-  { path: 'pagamento', loadChildren: './pagamento/pagamento.module#PagamentoPageModule' },
-  { path: 'editaevento', loadChildren: './editaevento/editaevento.module#EditaeventoPageModule' },
-  { path: 'profiloutente', loadChildren: './profiloutente/profiloutente.module#ProfiloutentePageModule' },
-  { path: 'dettagliutente', loadChildren: './dettagliutente/dettagliutente.module#DettagliutentePageModule' },
-  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
+  { path: 'lista', loadChildren: './pages/lista/lista.module#ListaPageModule' },
+  { path: 'mappa', loadChildren: './pages/mappa/mappa.module#MappaPageModule' },
+  { path: 'chatlist', loadChildren: './pages/chatlist/chatlist.module#ChatlistPageModule' },
+  { path: 'dettaglievento', loadChildren: './pages/dettaglievento/dettaglievento.module#DettaglieventoPageModule' },
+  // tslint:disable-next-line:max-line-length
+  { path: 'dettagliorganizzatore', loadChildren: './pages/dettagliorganizzatore/dettagliorganizzatore.module#DettagliorganizzatorePageModule' },
+  { path: 'donazione', loadChildren: './pages/donazione/donazione.module#DonazionePageModule' },
+  { path: 'acquisto', loadChildren: './pages/acquisto/acquisto.module#AcquistoPageModule' },
+  { path: 'pagamento', loadChildren: './pages/pagamento/pagamento.module#PagamentoPageModule' },
+  { path: 'profiloutente', loadChildren: './pages/profiloutente/profiloutente.module#ProfiloutentePageModule' },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
+  { path: 'editaevento', loadChildren: './pages/editaevento/editaevento.module#EditaeventoPageModule' },
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@
   <ion-toolbar>
     <ion-title align-title="center" >
       <div text-center="center">
-        <img routerLink="/pages/dettaglievento" routerDirection="forward" height="80" src="../assets/musipr/LOGO2.JPG">
+        <img routerLink="/dettaglievento" routerDirection="forward" height="80" src="../assets/musipr/LOGO2.JPG">
       </div>
     </ion-title>
   </ion-toolbar >
@@ -15,24 +15,25 @@
   <ion-searchbar [showCancelButton]="true" placeholder="Non funziono non so perchè" [animated]="true">
   </ion-searchbar>
   <div class="ion-padding">
-    <ion-list>
 
-      <ion-item >
+
+      <ion-item button="true" routerLink="/dettaglievento" routerDirection="forward">
 
 
         <ion-thumbnail slot="start" >
           <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
         </ion-thumbnail>
+
         <ion-label >
           <h2 >Vasco</h2>
           <p>Il mondo che vorrei</p>
           <p>Dom-25 Mag</p>
-          <ion-icon class=iconcina name="ios-contact"></ion-icon>
+          <ion-icon class="iconcina" name="ios-contact"></ion-icon>
         </ion-label>
 
       </ion-item >
 
-    </ion-list>
+
   </div>
 
 

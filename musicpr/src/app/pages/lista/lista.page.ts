@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {Evento} from '../../model/evento.model';
+import { IonInfiniteScroll } from '@ionic/angular';
+import {Foto} from '../../model/foto.model';
+import { NgModule } from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPage implements OnInit {
 
-  constructor() { }
+
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
 }
+

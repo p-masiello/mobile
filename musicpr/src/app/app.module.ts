@@ -11,10 +11,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+import {TranslateLoader} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+// The translate loader needs to know where to load i18n files
+// in Ionic's static asset pipeline.
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule,
+   HttpClientModule ,
+    IonicModule.forRoot(),
+    TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient],
+    }
+
+  }),
+    AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
@@ -24,4 +48,6 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+  export class AppModule {}
+

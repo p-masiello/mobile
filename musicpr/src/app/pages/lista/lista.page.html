@@ -4,47 +4,52 @@
   <ion-toolbar>
     <ion-title align-title="center" >
       <div text-center="center">
-        <img routerLink="/dettaglievento" routerDirection="forward" height="80" src="../assets/musipr/LOGO2.JPG">
+        <img  height="80" src="../assets/musipr/LOGO2.JPG">
       </div>
     </ion-title>
   </ion-toolbar >
+
 </ion-header>
-
-
 <ion-content>
-  <ion-searchbar [showCancelButton]="true" placeholder="Non funziono non so perchè" [animated]="true">
+
+
+
+
+  <ion-searchbar [showCancelButton]="true" placeholder="Cerca Evento" [animated]="true">
   </ion-searchbar>
   <div class="ion-padding">
 
 
-      <ion-item button="true" routerLink="/dettaglievento" routerDirection="forward">
+    <ion-item button="true" routerLink="/dettaglievento" routerDirection="forward">
 
 
-        <ion-thumbnail slot="start" >
-          <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
-        </ion-thumbnail>
+      <ion-thumbnail slot="start" >
+        <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
+      </ion-thumbnail>
 
-        <ion-label >
-          <h2 >Vasco</h2>
-          <p>Il mondo che vorrei</p>
-          <p>Dom-25 Mag</p>
-          <ion-icon class="iconcina" name="ios-contact"></ion-icon>
-        </ion-label>
+      <ion-label >
+        <h2 >Vasco</h2>
+        <p>Il mondo che vorrei</p>
+        <p>Dom-25 Mag</p>
+        <ion-icon class="iconcina" name="ios-contact"></ion-icon>
+      </ion-label>
 
-      </ion-item >
+    </ion-item >
 
 
   </div>
 
-
 </ion-content>
+
+
+
 <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/editaevento" routerDirection="root">
   <ion-fab-button color="white"  >
     <ion-icon  name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>
 
-
+<ion-footer>
 <ion-tabs>
   <ion-tab-bar id=tab  slot="bottom">
     <ion-tab-button tab="tab1" routerDirection="root" routerLink="/mappa">
@@ -65,4 +70,4 @@
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
-
+</ion-footer>

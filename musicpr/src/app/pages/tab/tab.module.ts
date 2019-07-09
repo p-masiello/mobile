@@ -15,15 +15,6 @@ const routes: Routes = [
     children: [
 
       {
-           path: 'mappa',
-            children: [
-                {
-                         path: '',
-                         loadChildren: './pages/mappa/mappa.module#MappaPageModule'
-                }
-                    ]
-       },
-      {
         path: 'lista',
         children: [
           {
@@ -32,6 +23,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+           path: 'mappa',
+            children: [
+                {
+                         path: '',
+                         loadChildren: './pages/mappa/mappa.module#MappaPageModule'
+                }
+                    ]
+       },
       {
              path: 'chatlist',
               children: [

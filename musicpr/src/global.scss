@@ -19,7 +19,7 @@ ion-icon.iconcina{
   left: 200px;
 }
 ion-icon{
-  color:red;
+  color:#ff031c ;
 }
 ion-fab-button{
   height: 60px;
@@ -29,8 +29,9 @@ ion-fab-button{
   border-style: solid;
   border-radius: 50%;
   border-width: 1px;
-  border-color: red;
-  -moz-transition: red;
+  border-color: #ff031c ;
+
+  --ripple-color: #ff031c ;
 }
 ion-fab{
   height: 60px;
@@ -43,8 +44,9 @@ ion-fab{
   border-radius: 50%;
 
 
+
 }
-#mappa{
+#ma{
   transform: rotate(180deg);
 }
 ion-icon.icon {
@@ -61,6 +63,10 @@ ion-label.icona{
 .h2{
   font-size: 150%;
   font-family: Arial;
+}
+ion-tab-button{
+  --ripple-color: #ff031c ;
+  --color-selected: black !important;
 }
 
 

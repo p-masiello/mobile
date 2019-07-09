@@ -3,6 +3,10 @@
   "DONATION_TITLE": "Donation",
   "DETAGLI_EVENTO_TITLE": "Event Details",
   "BUY_TITLE": "Buy",
+  "MAP": "Map",
+  "LIST": "List",
+  "CHATLIST": "Chatlist",
+  "PROFILE": "Profile",
 
   "LOGIN_BUTTON": "Enter",
   "DONE_BUTTON": "Done",

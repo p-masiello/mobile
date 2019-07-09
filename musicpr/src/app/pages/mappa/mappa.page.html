@@ -17,37 +17,13 @@
 
 
 </ion-content>
+
 <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/editaevento" routerDirection="root">
   <ion-fab-button color="white"  >
     <ion-icon  name="add"></ion-icon>
   </ion-fab-button>
 </ion-fab>
 
-<ion-footer>
-  <ion-tabs>
-    <ion-tab-bar id=tab  slot="bottom">
 
-      <ion-tab-button (click)="loadMap()" tab="tab1">
-        <ion-icon class=icon id=mappa name="ios-map"></ion-icon>
-        <ion-label class=icona  >Mappa</ion-label>
-      </ion-tab-button>
 
-      <ion-tab-button tab="tab2" routerLink="/lista" routerDirection="root">
-        <ion-icon class=icon name="ios-List"></ion-icon>
-        <ion-label class=icona>Lista</ion-label>
-      </ion-tab-button>
 
-      <ion-tab-button  tab="tab3" routerLink="/chatlist" routerDirection="root">
-        <ion-icon class=icon  name="ios-chatboxes">
-        </ion-icon>
-        <ion-label class=icona >Chat</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="tab4" routerLink="/profiloutente" routerDirection="root">
-        <ion-icon class=icon name="contact"></ion-icon>
-        <ion-label class=icona>Profilo</ion-label>
-      </ion-tab-button>
-
-    </ion-tab-bar>
-  </ion-tabs>
-</ion-footer>

@@ -2,7 +2,11 @@
   "BACK_BUTTON_TEXT":  "Indietro",
   "DETAGLI_EVENTO_TITLE": "Dettagli Evento",
   "DONATION_TITLE": "Donazione",
-  "BUY_TITLE": "Acquista",
+
+  "MAP": "Mappa",
+  "LIST": "Lista",
+  "CHATLIST": "Chatlist",
+  "PROFILE": "Profilo",
   "LOGIN_BUTTON": "Accedi",
   "DONE_BUTTON": "Fatto",
   "SAVE_BUTTON": "Salva",

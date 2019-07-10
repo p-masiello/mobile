@@ -13,21 +13,17 @@ import {Observable} from 'rxjs';
 export class ListaPage implements OnInit {
 
 
-  // private eventi$: Observable<Evento[]>;
 
 
-  constructor( // private notiziaService: EventoService
+
+  constructor(
               ) {
 
   }
 
   ngOnInit() {
 
-    /* this.eventi$ = this.eventoService.list();
 
-
-
-         */
   }
  }
 

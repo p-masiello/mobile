@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import {Observable} from 'rxjs';
 import {Evento} from '../../model/evento.model';
 
@@ -11,9 +12,10 @@ export class ProfiloutentePage implements OnInit {
   private eventi$: Observable<Evento[]>;
   evento: any;
 
-  constructor() { }
+  constructor(private menu: MenuController) { }
 
   ngOnInit() {
   }
+
 
 }

@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { AcquistoPage } from './acquisto.page';
 import {TranslateModule} from '@ngx-translate/core';
 
+
 const routes: Routes = [
   {
     path: '',

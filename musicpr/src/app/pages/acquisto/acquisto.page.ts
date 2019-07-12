@@ -13,3 +13,6 @@ export class AcquistoPage implements OnInit {
   }
 
 }
+
+
+

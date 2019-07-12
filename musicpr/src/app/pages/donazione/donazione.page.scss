@@ -1,6 +1,6 @@
 ion-button.dona{
   position: relative;
-  left: 250px;
+  left: 130px;
   bottom: 30px;
 
 }
@@ -8,4 +8,8 @@ ion-progress-bar{
   width: 200px;
   height: 20px;
   left: 20px;
+}
+ion-slides {
+  --bullet-background: #e00319;
+  --bullet-background-active:  #ff031c;
 }

@@ -19,7 +19,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: './pages/lista/lista.module#ListaPageModule'
+            loadChildren: './pages/lista/lista.module#ListaPageModule',
           }
         ]
       },

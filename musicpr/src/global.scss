@@ -38,7 +38,7 @@ ion-fab{
   width: 60px;
   background-color: white;
   bottom :68px;
-  right: 3px;
+
   color: white;
   border-style: solid;
   border-radius: 50%;
@@ -46,9 +46,7 @@ ion-fab{
 
 
 }
-#ma{
-  transform: rotate(180deg);
-}
+
 ion-icon.icon {
   color: black;
 }
@@ -68,6 +66,8 @@ ion-tab-button{
   --ripple-color: #ff031c ;
   --color-selected: black !important;
 }
+
+
 
 
 

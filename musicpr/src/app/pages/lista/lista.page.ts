@@ -17,13 +17,13 @@ export class ListaPage implements OnInit {
 
 
 
-  constructor(private eventoServiceService: EventoServiceService
+  constructor(private eventoService: EventoServiceService
               ) {
 
   }
 
   ngOnInit() {
-      this.eventi$ = this.eventoServiceService.list();
+      this.eventi$ = this.eventoService.list();
 
   }
  }

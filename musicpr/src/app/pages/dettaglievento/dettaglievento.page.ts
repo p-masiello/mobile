@@ -12,22 +12,23 @@ import {EventoServiceService} from '../../services/evento.service';
   styleUrls: ['./dettaglievento.page.scss'],
 })
 export class DettaglieventoPage implements OnInit {
+  @Input() evento: Evento;
 
-  private evento$: Observable<Evento>;
   constructor(private route: ActivatedRoute,
-              private eventoService: EventoServiceService) { }
+              private eventoService: EventoServiceService,
+             ) { }
 
   ngOnInit() {
     this.getEvento();
   }
 
-   getEvento(): void {
-     const idevento = +this.route.snapshot.paramMap.get('idevento');
-     this.route.paramMap.subscribe((params: ParamMap) => {
-       this.evento$ = this.eventoService.getEvento(idevento);
+   getEvento() {
 
-  });
+     const idevento = +this.route.snapshot.paramMap.get('?idevento');
+     this.eventoService.getEvento(idevento).subscribe(evento => this.evento = evento);
+
+   }
   }
-}
+
 
 

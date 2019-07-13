@@ -16,10 +16,7 @@ export class ListaService {
     constructor(private http: HttpClient) {
     }
 
-     list(): Observable <Evento[]> {
 
-        return this.http.get<Evento[]>(this.eventiUrl);
-    }
 
  }
 

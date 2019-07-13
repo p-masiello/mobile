@@ -8,13 +8,29 @@ import {Evento} from './model/evento.model';
 export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         const eventi = [
-            { idevento: 11, nomeevento: 'Dr Nice', sottotitolo : 'cane',
-                descrizione: 'string',
+            { idevento: 11,
+                nomeevento: 'Metallica',
+                sottotitolo : 'Master of puppets',
+                descrizione: 'I Metallica tornano ad emozionare le platee di tutto il mondo con il loro tour, ' +
+                    'partecipa anche tu!!!',
+            },
+            { idevento: 12,
+                nomeevento: 'MetallicA',
+                sottotitolo : 'Master of puppets',
+                descrizione: 'I Metallica tornano ad emozionare le platee di tutto il mondo con il loro tour, ' +
+                    'partecipa anche tu!!!',
+            },
+            { idevento: 13,
+                nomeevento: 'Antonio',
+                sottotitolo : 'Figa mi vida',
+                descrizione: 'I Metallica tornano ad emozionare le platee di tutto il mondo con il loro tour, ' +
+                    'partecipa anche tu!!!',
             },
 
 
 
-];
+
+        ];
 
 
         return{eventi};

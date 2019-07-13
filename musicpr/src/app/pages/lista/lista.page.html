@@ -22,42 +22,26 @@
   <div class="ion-padding">
 
 
-    <ion-item button="true" routerLink="/dettaglievento" routerDirection="forward">
 
 
 
-      <ion-thumbnail slot="start" >
-        <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
-      </ion-thumbnail>
 
-      <ion-label >
-        <h2 >Vasco</h2>
-        <p>Il mondo che vorrei</p>
-        <p>Dom-25 Mag</p>
-
-        <ion-icon class="iconcina" name="ios-contact"></ion-icon>
-
-      </ion-label>
-
-    </ion-item >
+      <ion-item *ngFor="let evento of eventi$ | async" [routerLink]="['/dettaglievento', evento.idevento]" routerDirection="forward" detail="true">
 
 
-    <ion-item button="true" routerLink="/dettaglievento" routerDirection="forward">
+          <ion-thumbnail slot="start" >
+            <img src="../assets/musipr/LOGO2.JPG">
+          </ion-thumbnail>
+
+        <ion-label>
+          <h3>{{evento.nomeevento}}</h3>
+          <h5>{{evento.sottotitolo}}</h5>
+          <p>{{'data'}}</p>
+          <ion-icon class="iconcina" name="ios-contact"></ion-icon>
 
 
-      <ion-thumbnail slot="start" >
-        <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
-      </ion-thumbnail>
-
-      <ion-label >
-        <h2 >Vasco</h2>
-        <p>Il mondo che vorrei</p>
-        <p>Dom-25 Mag</p>
-        <ion-icon class="iconcina" name="ios-contact"></ion-icon>
-      </ion-label>
-
-    </ion-item >
-
+        </ion-label>
+      </ion-item>
 
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/editaevento" routerDirection="root">

@@ -11,30 +11,40 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-slides [pager]="true">
-    <ion-slide>
-      <img src="../assets/musipr/LOGO2.JPG">
-    </ion-slide>
-    <ion-slide>
-      <img src="../assets/musipr/LOGO2.JPG">
-    </ion-slide>
-  </ion-slides>
+<ion-content padding="true">
 
-  <h2>Vasco Arrossi</h2>
-  <h3>Lo concierto</h3>
-  <h5>Descrizione Evento</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur<br>
-    adipiscing elit, sed do eiusmod tempor <br>
-    incididunt ut labore et
-    dolore magna aliqua.</p>
-  <ion-button color="tertiary" routerDirection="forward" routerLink="/donazione">{{"DONATION_TITLE"| translate}}</ion-button>
 
-  <ion-button  color="tertiary" routerDirection="forward" routerLink="/acquisto">{{"BUY_TITLE"| translate}}</ion-button>
+  <ion-card *ngIf="(evento$|async) as evento">
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button  >
-      <ion-icon  id="navigation" name="compass"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+ <ion-slides [pager]="true">
+  <ion-slide>
+    // immagini da capire come fare
+    <img src="../assets/musipr/LOGO2.JPG">
+  </ion-slide>
+  <ion-slide>
+    <img src="../assets/musipr/LOGO2.JPG">
+  </ion-slide>
+ </ion-slides>
+
+  <ion-card-header>
+    <ion-card-title>{{evento.nomeevento}}</ion-card-title>
+    <ion-card-subtitle>{{evento.sottotitolo}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{evento.descrizione}}
+  </ion-card-content>
+
+  </ion-card>
+
+  <ion-button  color="tertiary" >{{"BUY_TITLE"| translate}}</ion-button>
+
+
 </ion-content>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button  >
+    <ion-icon  id="navigation" name="compass"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

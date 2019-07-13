@@ -4,6 +4,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 import {Foto} from '../../model/foto.model';
 import { NgModule } from '@angular/core';
 import {Observable} from 'rxjs';
+import {EventoServiceService} from '../../services/evento.service';
 
 @Component({
   selector: 'app-lista',
@@ -12,17 +13,17 @@ import {Observable} from 'rxjs';
 })
 export class ListaPage implements OnInit {
 
+    private eventi$: Observable<Evento[]>;
 
 
 
-
-  constructor(
+  constructor(private eventoServiceService: EventoServiceService
               ) {
 
   }
 
   ngOnInit() {
-
+      this.eventi$ = this.eventoServiceService.list();
 
   }
  }

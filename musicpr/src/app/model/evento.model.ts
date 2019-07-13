@@ -2,7 +2,7 @@
 import { Foto } from './foto.model';
 
 export class Evento {
-    idevento: string;
+    idevento: number;
     nomeevento: string;
     sottotitolo: string;
     descrizione: string;

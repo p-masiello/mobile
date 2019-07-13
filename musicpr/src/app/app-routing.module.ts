@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'lista', loadChildren: './pages/lista/lista.module#ListaPageModule' },
   { path: 'mappa', loadChildren: './pages/mappa/mappa.module#MappaPageModule' },
   { path: 'chatlist', loadChildren: './pages/chatlist/chatlist.module#ChatlistPageModule' },
-  { path: 'dettaglievento', loadChildren: './pages/dettaglievento/dettaglievento.module#DettaglieventoPageModule' },
+  { path: 'dettaglievento/:idevento', loadChildren: './pages/dettaglievento/dettaglievento.module#DettaglieventoPageModule' },
   // tslint:disable-next-line:max-line-length
   { path: 'dettagliorganizzatore', loadChildren: './pages/dettagliorganizzatore/dettagliorganizzatore.module#DettagliorganizzatorePageModule' },
   { path: 'donazione', loadChildren: './pages/donazione/donazione.module#DonazionePageModule' },

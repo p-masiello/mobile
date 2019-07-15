@@ -14,35 +14,21 @@
 </ion-searchbar>
 
 <ion-content>
-
-
-
-
-
   <div class="ion-padding">
-
-
-
-
-
-
-      <ion-item *ngFor="let evento of eventi$ | async" [routerLink]="['/dettaglievento', evento.idevento]" routerDirection="forward" detail="true">
+    <ion-item *ngFor="let evento of eventi$ | async" [routerLink]="['/dettaglievento', evento.id]" routerDirection="forward" >
 
 
           <ion-thumbnail slot="start" >
-            <img src="../assets/musipr/LOGO2.JPG">
+            <img [src]="evento.foto">
           </ion-thumbnail>
 
         <ion-label>
-          <h3>{{evento.nomeevento}}</h3>
+          <h3>{{evento.nome}}</h3>
           <h5>{{evento.sottotitolo}}</h5>
-          <p>{{'data'}}</p>
+          <p>{{evento.data}}</p>
           <ion-icon class="iconcina" name="ios-contact"></ion-icon>
-
-
         </ion-label>
       </ion-item>
-
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/editaevento" routerDirection="root">
     <ion-fab-button color="white"  >

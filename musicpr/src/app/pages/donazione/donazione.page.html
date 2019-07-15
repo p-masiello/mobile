@@ -8,36 +8,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    <ion-slides [pager]="true">
-      <ion-slide>
-        <img src="../assets/musipr/LOGO2.JPG">
-      </ion-slide>
-      <ion-slide>
-        <img src="../assets/musipr/LOGO2.JPG">
-      </ion-slide>
+<ion-content *ngIf="(evento$ | async) as evento">
+
+    <ion-card >
+ <ion-slides [pager]="true">
+    <ion-slide>
+      //immagini da capire come fare
+      <ion-img [src]="evento.foto"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img [src]="evento.foto"></ion-img>
+    </ion-slide>
     </ion-slides>
-  </div>
-  <div>
-    <ion-progress-bar color="tertiary" mode="md" type="determinate" value="0.5"></ion-progress-bar>
+    <p>{{evento.sommaraggiunta / evento.sommarichiesta}}</p> //da vedere collegamento
+    <ion-progress-bar color="tertiary" mode="md" type="determinate" value="0.5"></ion-progress-bar>//da vedere collegamento value non importante
+    <ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
 
-  </div>
+    </ion-card>
 
 
 
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail>
-        <img width="63" height="50" src="../assets/musipr/LOGO2.JPG">
-      </ion-thumbnail>
-      <ion-label>
-        <p>Gigino ha donato 10^20€!</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item *ngFor="let utente of utenti$"> // DA IMPLEMENTARE
+        <ion-avatar slot="start">
+          <ion-img [src]="utente.foto"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <p>{{utente.nome}} ha donato {{"15€"}}</p>//da vedere cifra
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  ♀<ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"DONATION_TITLE"| translate}}</ion-button>
 
-</ion-content>
-<ion-footer>
-  <ion-button color="tertiary" class="dona" routerDirection="forward" routerLink="/pagamento">{{"DONATION_TITLE"| translate}}</ion-button>
-</ion-footer>
+  </ion-content>
+
+
+

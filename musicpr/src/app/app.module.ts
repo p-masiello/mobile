@@ -34,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [BrowserModule,
    HttpClientModule ,
       HttpClientInMemoryWebApiModule.forRoot(
-          InMemoryDataService, { dataEncapsulation: false }
+          InMemoryDataService, { dataEncapsulation: false , passThruUnknownUrl: true}
       ),
 
     IonicModule.forRoot(),

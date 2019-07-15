@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {Utente} from '../../model/utente.model';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {UtenteServiceService} from '../../services/utente.service';
 
 @Component({
   selector: 'app-dettagliorganizzatore',
@@ -6,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dettagliorganizzatore.page.scss'],
 })
 export class DettagliorganizzatorePage implements OnInit {
+    utente$: Observable<Utente>;
 
-  constructor() { }
+  constructor(private utenteService: UtenteServiceService,
+              private route: ActivatedRoute, ) { }
 
   ngOnInit() {
-  }
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.utente$ = this.utenteService.getUtente(parseInt(params.get('CREATORE'), 0));
+    });
+
+}
 
 }

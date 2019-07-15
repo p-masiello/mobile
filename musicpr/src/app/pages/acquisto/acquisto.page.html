@@ -7,20 +7,35 @@
 
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content *ngIf="(evento$ | async) as evento">
   <div class="ion-padding">
-    <ion-slides [pager]="true">
-      <ion-slide>
-        <img src="../assets/musipr/LOGO2.JPG">
-      </ion-slide>
-      <ion-slide>
-        <img src="../assets/musipr/LOGO2.JPG">
-      </ion-slide>
+
+    <ion-card >
+
+     <ion-slides [pager]="true">
+    <ion-slide>
+
+      <ion-img [src]="evento.foto"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img [src]="evento.foto"></ion-img>
+    </ion-slide>
+
     </ion-slides>
+
+    <ion-card-header>
+
+      <ion-card-title>{{evento.nomeevento}}</ion-card-title>
+      <ion-card-subtitle>{{evento.sottotitolo}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>{{evento.costobiglietto}}</ion-card-content>
+      <ion-card-content>{{evento.bigliettidisponibili}}</ion-card-content>
+    </ion-card>
+    <h5>N° Biglietti</h5>
 
 
   </div>
   <div class="acquistabutton">
-    <ion-button slot="bottom" color="tertiary" class="acquista" routerDirection="forward" routerLink="/pagamento">Dona</ion-button>
+    <ion-button slot="bottom" color="tertiary" class="acquista" routerDirection="forward" [routerLink]="['/pagamento', evento.id]" >{{"BUY_TITLE" | translate }}</ion-button>
   </div>
 </ion-content>

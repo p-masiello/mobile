@@ -1,7 +1,7 @@
 export const USE_PROXY = true;
 
 export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/musicpr/api';
-
+// DA MODFICIARE
 export const URL = {
     LOGIN: URL_BASE + '/login',
     LOGOUT: URL_BASE + '/logout',

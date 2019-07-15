@@ -1,10 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/observable';
 
-
+import 'rxjs/add/observable/of';
 import {Evento} from '../../model/evento.model';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {EventoServiceService} from '../../services/evento.service';
+
 
 @Component({
   selector: 'app-dettaglievento',
@@ -12,23 +13,50 @@ import {EventoServiceService} from '../../services/evento.service';
   styleUrls: ['./dettaglievento.page.scss'],
 })
 export class DettaglieventoPage implements OnInit {
-  @Input() evento: Evento;
 
-  constructor(private route: ActivatedRoute,
-              private eventoService: EventoServiceService,
-             ) { }
+    private evento$: Observable<Evento>;
 
-  ngOnInit() {
-    this.getEvento();
-  }
 
-   getEvento() {
+     pay = true;
+    crow = true; // CREARE FUNZIONE PER SETTARLI....COME????
+    add = true;
 
-     const idevento = +this.route.snapshot.paramMap.get('?idevento');
-     this.eventoService.getEvento(idevento).subscribe(evento => this.evento = evento);
 
-   }
-  }
+
+
+
+
+    constructor(private route: ActivatedRoute,
+                private eventoService: EventoServiceService) {
+    }
+
+    ngOnInit()  {
+        this.route.paramMap.subscribe((params: ParamMap) => {
+            this.evento$ = this.eventoService.getEvento(parseInt(params.get('idevento'), 0));
+
+        });
+
+        this.setButton();
+
+
+
+
+    }
+
+    setButton() {
+        if (this.evento$) {
+            console.log('vediamo');
+
+        }
+
+    }
+
+
+
+    }
+
+
+
 
 
 

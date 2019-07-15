@@ -1,2 +1,2 @@
 // tslint:disable-next-line:eofline
-// porcodio
+// porcodio da mettere operazione list() per pescare gli utenti

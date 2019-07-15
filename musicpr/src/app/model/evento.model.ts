@@ -2,8 +2,8 @@
 import { Foto } from './foto.model';
 
 export class Evento {
-    idevento: number;
-    nomeevento: string;
+    ide: number;
+    nome: string;
     sottotitolo: string;
     descrizione: string;
     // data: date; da vedere
@@ -11,5 +11,8 @@ export class Evento {
     latitudine: string;
     longitudine: string;
    // foto: Foto;
+    // CI VA UN CREATORE
+    // PARTECIPANTI
+
 
 }

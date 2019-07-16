@@ -1,18 +1,18 @@
-// @ts-ignore
 import { Foto } from './foto.model';
+import {Utente} from './utente.model';
 
 export class Evento {
-    ide: number;
+    id: number;
     nome: string;
     sottotitolo: string;
     descrizione: string;
-    // data: date; da vedere
+     // data: date; da vedere
     genere: string;
     latitudine: string;
     longitudine: string;
-   // foto: Foto;
-    // CI VA UN CREATORE
-    // PARTECIPANTI
+    foto: Foto;
+    creatore: Utente;
+    partecipanti: number;
 
 
 }

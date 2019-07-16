@@ -17,7 +17,7 @@ export class DettagliorganizzatorePage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.utente$ = this.utenteService.getUtente(parseInt(params.get('CREATORE'), 0));
+      this.utente$ = this.utenteService.findByIdUtente(parseInt(params.get('evento.creatore.id'), 0));
     });
 
 }

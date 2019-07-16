@@ -17,10 +17,7 @@ import {TranslateLoader} from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// tslint:disable-next-line:import-spacing
-// tslint:disable-next-line:import-spacing
-import { InMemoryDataService }  from './in-memory-data.service';
+
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -33,10 +30,6 @@ export function createTranslateLoader(http: HttpClient) {
   entryComponents: [],
   imports: [BrowserModule,
    HttpClientModule ,
-      HttpClientInMemoryWebApiModule.forRoot(
-          InMemoryDataService, { dataEncapsulation: false , passThruUnknownUrl: true}
-      ),
-
     IonicModule.forRoot(),
     TranslateModule.forRoot({
     loader: {

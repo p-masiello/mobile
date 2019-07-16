@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/observable';
-
-import 'rxjs/add/observable/of';
 import {Evento} from '../../model/evento.model';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {EventoServiceService} from '../../services/evento.service';
@@ -18,12 +16,9 @@ export class DettaglieventoPage implements OnInit {
 
 
      pay = true;
-    crow = true; // CREARE FUNZIONE PER SETTARLI....COME????
+    crow = true; // CREARE FUNZIONE PER SETTARLI....COME???? in base al tipo di evento
     add = true;
-
-
-
-
+    disableButton;
 
 
     constructor(private route: ActivatedRoute,
@@ -32,25 +27,15 @@ export class DettaglieventoPage implements OnInit {
 
     ngOnInit()  {
         this.route.paramMap.subscribe((params: ParamMap) => {
-            this.evento$ = this.eventoService.getEvento(parseInt(params.get('idevento'), 0));
+            this.evento$ = this.eventoService.findById(parseInt(params.get('id'), 0)); // ci vuole un pipe per settare dei booleani
 
         });
-
-        this.setButton();
-
-
-
-
     }
 
-    setButton() {
-        if (this.evento$) {
-            console.log('vediamo');
-
-        }
-
+    addPart() {
+       // UPDATE ATTRIBUTO PARTECIPANTI
+       this.disableButton = true;
     }
-
 
 
     }

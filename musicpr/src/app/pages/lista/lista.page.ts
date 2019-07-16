@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {Evento} from '../../model/evento.model';
-import { IonInfiniteScroll } from '@ionic/angular';
-import {Foto} from '../../model/foto.model';
-import { NgModule } from '@angular/core';
 import {Observable} from 'rxjs';
 import {EventoServiceService} from '../../services/evento.service';
-import {tap} from "rxjs/operators";
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-lista',

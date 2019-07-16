@@ -1,11 +1,23 @@
 <ion-header>
   <ion-toolbar>
 
-    <ion-title text-center="center">Chat</ion-title>
+    <ion-title text-center="center">{{"CHATLIST"|translate}}</ion-title>
 
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <ion-list *ngFor="let chat of chats$ | async"  [routerLink]="['/chat', chat.id]" routerDirection="forward" detail="true">
+<ion-item >
+  <ion-label>
 
+    <ion-avatar slot="start">
+      <img [src]="chat.destinatario.foto">
+    </ion-avatar> //vedere collegamento immagine
 
-
+    <ion-label>
+      <p>{{chat.destinatario.nome}}</p>
+    </ion-label>
+</ion-item>
+  </ion-list>
+</ion-content>
 

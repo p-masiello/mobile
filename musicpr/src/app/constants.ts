@@ -1,12 +1,13 @@
 export const USE_PROXY = true;
 
-export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/musicpr/api';
+export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/musicprs/api';
 // DA MODFICIARE
 export const URL = {
     LOGIN: URL_BASE + '/login',
     LOGOUT: URL_BASE + '/logout',
     UPDATE_PROFILO: URL_BASE + '/utente/updateprofilo',
     EVENTI: URL_BASE + '/eventi',
+    UTENTE: URL_BASE + '/utenti'
 
 };
 

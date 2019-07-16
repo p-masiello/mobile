@@ -1,4 +1,4 @@
-package mobile.musicpr;
+package com.mobile.musicpr;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

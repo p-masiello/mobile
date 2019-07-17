@@ -8,18 +8,51 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div *ngIf="evento">
-  <img id=image src="../assets/musipr/LOGO2.JPG" align="center">
-  <ion-input class=inputsize placeholder="Nome Evento"></ion-input>
-  <div >   <ion-input class="data" placeholder="Data" [(ngModel)]="evento.nomeevento" ></ion-input></div>
-  <div >   <ion-input  class="ora" placeholder="Ora"></ion-input> </div>
+  <form [formGroup]="eventoFormModel">
+  <img id=image formControlName="foto" align="center">
+
+    <ion-item class="animated fadeInUp">
+      <ion-label position="floating">{{ 'NOME_EVENTO' | translate }}</ion-label>
+  <ion-input class=inputsize formControlName="nome"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="eventoFormModel.get('nome').touched && eventoFormModel.get('nome').invalid">
+      <ion-text color="danger">{{ 'NOME_EVENTO_REQUIRED' | translate }}</ion-text> // aggiungere  a i18n
+    </p>
+    <ion-item class="animated fadeInUp">
+      <ion-label position="floating">{{ 'SOTTOTITOLO_EVENTO' | translate }}</ion-label>
+    <ion-input class=inputsize  formControlName="sottotitolo"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="eventoFormModel.get('sottotitolo').touched && eventoFormModel.get('sottotitolo').invalid">
+      <ion-text color="danger">{{ 'SOTTOTITOLO_EVENTO_REQUIRED' | translate }}</ion-text> // aggiungere  a i18n
+    </p>
+
+  <div >  <ion-datetime class="data" formControlName="data" displayFormat="DD/MM/YYYY" min="2018-01-01" max="2020-12-31" cancelText="{{ 'CANCEL_BUTTON' | translate }}"
+                        doneText="{{ 'SAVE_BUTTON' | translate }}"></ion-datetime>
+  </div>
+  <div > <ion-datetime class="ora" formControlName="ora"  displayFormat="HH:mm" cancelText="{{ 'CANCEL_BUTTON' | translate }}"
+                       doneText="{{ 'SAVE_BUTTON' | translate }}"></ion-datetime>  </div>
   <div style="clear:both"></div>
 
-  <ion-input class=inputsize placeholder="Luogo"></ion-input>
-  <ion-input class=descrizione placeholder="Descrizione"></ion-input>
-  <div class="salvabutton">
-    <ion-button (click)="getEvento()" >Carica evento</ion-button>
-    <ion-button color="tertiary" align="center" (click)="save()">Salva</ion-button>
-  </div>
-  </div>
+  <ion-input class=inputsize formControlName="luogo"placeholder="Luogo"></ion-input>
+
+    <ion-item class="animated fadeInUp">
+      <ion-label position="floating">{{ 'DESCRIZIONE_EVENTO' | translate }}</ion-label>
+      <ion-input class=descrizione formControlName="descrizione"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="eventoFormModel.get('descrizione').touched && eventoFormModel.get('descrizione').invalid">
+      <ion-text color="danger">{{ 'DESCRIZIONE_REQUIRED' | translate }}</ion-text> // aggiungere  a i18n
+    </p>
+// CI VUOLE PICKER
+
+
+    <div margin-top="30px" align="center">
+      <ion-button icon-left size="medium" shape="round" color="primary" (click)="onSubmit()" [disabled]="!eventoFormModel.valid" tappable>
+        {{ 'SAVE_BUTTON' | translate }}
+      </ion-button>
+      <ion-button icon-left size="medium" shape="round" color="primary" (click)="cancel()" tappable>
+        {{ 'CANCEL_BUTTON' | translate }}
+      </ion-button>
+    </div>
+  </form>
+
 </ion-content>

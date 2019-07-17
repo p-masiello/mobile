@@ -15,9 +15,7 @@ export class DettaglieventoPage implements OnInit {
     private evento$: Observable<Evento>;
 
 
-     pay = true;
-    crow = true; // CREARE FUNZIONE PER SETTARLI....COME???? in base al tipo di evento
-    add = true;
+
     disableButton;
 
 
@@ -36,6 +34,7 @@ export class DettaglieventoPage implements OnInit {
        // UPDATE ATTRIBUTO PARTECIPANTI
        this.disableButton = true;
     }
+
 
 
     }

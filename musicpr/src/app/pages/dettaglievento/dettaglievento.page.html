@@ -19,10 +19,10 @@
  <ion-slides [pager]="true">
   <ion-slide>
 
-    <img [src]="evento.foto">
+    <img [src]="evento.foto.id">
   </ion-slide>
   <ion-slide>
-    <img [src]="evento.foto">
+    <img [src]="evento.foto.id">
   </ion-slide>
  </ion-slides>
 
@@ -38,9 +38,9 @@
 
   </ion-card>
 
-  <ion-button *ngIf="pay; then crow; else add" color="tertiary" [routerLink]="['/acquisto', evento.id]">{{"BUY_TITLE"| translate}}</ion-button>
-    <ion-button  #crow  color="tertiary" [routerLink]="['/dona', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
-    <ion-button #add color="tertiary" (click)="addPart()" [disabled]="disableButton">{{"TAKE_PART"| translate}}</ion-button>
+  <ion-button *ngIf="evento.genere.pagamento" color="tertiary" [routerLink]="['/acquisto', evento.id]">{{"BUY_TITLE"| translate}}</ion-button>
+    <ion-button *ngIf="evento.genere.crowfounding"  color="tertiary" [routerLink]="['/dona', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
+    <ion-button *ngIf="evento.genere.gratuito" color="tertiary" (click)="addPart()" [disabled]="disableButton">{{"TAKE_PART"| translate}}</ion-button>
 
 </ion-content>
 

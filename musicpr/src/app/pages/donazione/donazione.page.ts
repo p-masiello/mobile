@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {EventoServiceService} from '../../services/evento.service';
 import {UtenteServiceService} from '../../services/utente.service';
 import {Utente} from '../../model/utente.model';
+import {TIPOLOGIA_EVENTO_CROWFOUNDING} from '../../model/evento.model';
 
 @Component({
   selector: 'app-donazione',
@@ -17,14 +18,16 @@ export class DonazionePage implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private eventoService: EventoServiceService,
-              private utenteService: UtenteServiceService) { }
+              private utenteService: UtenteServiceService) {
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.evento$ = this.eventoService.getEvento(parseInt(params.get('id'), 0));
+      this.evento$ = this.eventoService.findById(parseInt(params.get('id'), 0));
 
     });
-    this.utenti$ = this.utenteService.list(); // deve prendere quelli che hanno donato
+
+
   }
 
 }

@@ -19,8 +19,8 @@
     <ion-slide>
       <ion-img [src]="evento.foto"></ion-img>
     </ion-slide>
-    </ion-slides>
-    <p>{{evento.sommaraggiunta / evento.sommarichiesta}}</p> //da vedere collegamento
+    </ion-slides> // SICURAMENTE DA MODIFICARE
+    <p>{{evento.genere.crowfounding.sommaraggiunta / evento.genere.crowfounding.sommarichiesta}}</p> //da vedere collegamento
     <ion-progress-bar color="tertiary" mode="md" type="determinate" value="0.5"></ion-progress-bar>//da vedere collegamento value non importante
     <ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
 
@@ -29,16 +29,16 @@
 
 
     <ion-list>
-      <ion-item *ngFor="let utente of utenti$"> // DA IMPLEMENTARE
+      <ion-item> // DA IMPLEMENTARE
         <ion-avatar slot="start">
-          <ion-img [src]="utente.foto"></ion-img>
+          <ion-img [src]="evento.genere.crowfounding"></ion-img>
         </ion-avatar>
         <ion-label>
-          <p>{{utente.nome}} ha donato {{"15€"}}</p>//da vedere cifra
+          <p>{{evento.genere.crowfounding.donatori.nome}} ha donato {{"15€"}}</p>//da vedere cifra
         </ion-label>
       </ion-item>
     </ion-list>
-  ♀<ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"DONATION_TITLE"| translate}}</ion-button>
+  <ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"DONATION_TITLE"| translate}}</ion-button>
 
   </ion-content>
 

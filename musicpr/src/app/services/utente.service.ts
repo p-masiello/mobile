@@ -4,6 +4,7 @@ import {Observable, of} from 'rxjs';
 import 'rxjs/add/operator/map';
 import {URL} from '../constants';
 import {Utente} from '../model/utente.model';
+import {Evento} from "../model/evento.model";
 
 
 
@@ -22,5 +23,11 @@ export class UtenteServiceService {
     findByIdUtente(creatoreid: number): Observable<Utente> {
         const apiURL = `${URL.UTENTE}/${creatoreid}`;
         return this.http.get<Utente>(apiURL);
+    }
+
+    crows(): Observable<Utente[]> {
+        const apiURL = '${URL.DONATORI}/${id}';
+        return this.http.get<Utente[]>(apiURL);
+
     }
 }

@@ -7,7 +7,10 @@ export const URL = {
     LOGOUT: URL_BASE + '/logout',
     UPDATE_PROFILO: URL_BASE + '/utente/updateprofilo',
     EVENTI: URL_BASE + '/eventi',
-    UTENTE: URL_BASE + '/utenti'
+    UPDATE_EVENTO: URL_BASE + '/eventi/updateevento',
+    UTENTE: URL_BASE + '/utenti',
+    FOTO: URL_BASE + '/foto',
+    DONATORI: URL_BASE + '/eventi/genere/donatori',
 
 };
 

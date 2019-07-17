@@ -6,6 +6,7 @@ import {tap} from 'rxjs/operators';
 import {EditaeventoPage} from '../editaevento/editaevento.page';
 import {ModalController, NavParams} from '@ionic/angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {OverlayEventDetail} from '@ionic/core/dist/types/utils/overlays-interface';
 
 
 @Component({

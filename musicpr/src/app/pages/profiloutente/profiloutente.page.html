@@ -5,7 +5,7 @@
       <ion-toolbar >
 
         <ion-title>Impostazioni</ion-title>
-        <ion-button color="tertiary" >Log-out <ion-icon class="logout" name="log-out"></ion-icon></ion-button>
+        <ion-button color="medium" (click)="logout()">Log-out<ion-icon class="logout" name="log-out"></ion-icon></ion-button>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -44,10 +44,68 @@
 
 
 <ion-content>
+  <form [formGroup]="profiloFormModel">
+    <ion-card >
+      <ion-avatar>
+        <img [src]="utente.foto">
+      </ion-avatar>
+      <ion-card-header>
+
+        <ion-card-title> <ion-label position="floating">{{ 'NOME' | translate }}</ion-label>
+          <ion-input  formControlName="nome"></ion-input>
+          <p ion-text class="text08" *ngIf="profiloFormModel.get('nome').touched && profiloFormModel.get('nome').invalid">
+            <ion-text color="danger">{{ 'NAME_REQUIRED' | translate }}</ion-text>
+          </p></ion-card-title>
+
+        <ion-card-subtitle>Descrizione personale</ion-card-subtitle> // AGGIUNGERE A I18N
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label position="floating">{{ 'DESCRIZIONE' | translate }}</ion-label>
+        <ion-input  formControlName="descrizione"></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+
+
+      <ion-item>
+        <ion-label position="fixed">{{ 'LANGUAGE' | translate }}</ion-label>
+        <ion-select formControlName="linguaPreferita" okText="{{ 'SAVE_BUTTON' | translate }}" cancelText="{{ 'CANCEL_BUTTON' | translate }}">
+          <ion-select-option *ngFor="let lingua of lingue" [value]="lingua.valore">{{lingua.etichetta}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    <div margin-top="30px" align="center">
+      <ion-button icon-left size="medium" shape="round" color="tertiary" (click)="onSubmit()" [disabled]="!profiloFormModel.valid" tappable>
+        {{ 'SAVE_BUTTON' | translate }}
+      </ion-button>
+      <ion-button icon-left size="medium" shape="round" color="tertiary" (click)="cancel()" tappable>
+        {{ 'CANCEL_BUTTON' | translate }}
+      </ion-button>
+    </div>
+  </form>
   <ion-list>
-    <ion-item>
-      <h2>{{5+5}}</h2>
-    </ion-item>
+    <ion-item-sliding *ngFor="let evento of eventi$ | async" #sliding>
+
+      <ion-item>
+      <ion-thumbnail slot="start" >
+        <img [src]="evento.foto">
+      </ion-thumbnail>
+
+      <ion-label>
+        <h3>{{evento.nome}}</h3>
+        <h5>{{evento.sottotitolo}}</h5>
+        <p>{{evento.data}}</p>
+        <ion-icon class="iconcina" name="ios-contact"></ion-icon>
+      </ion-label>
+      </ion-item>    <ion-item-options side="end">
+      <ion-item-option color="secondary" (click)="updateEvento(evento, sliding)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-item-option>
+      <ion-item-option color="primary" (click)="deleteEvento(evento, sliding)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+    </ion-item-sliding>
 
   </ion-list>
 

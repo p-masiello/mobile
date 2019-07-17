@@ -51,10 +51,10 @@
       </ion-avatar>
       <ion-card-header>
 
-        <ion-card-title> <ion-label position="floating">{{ 'NOME' | translate }}</ion-label>
+        <ion-card-title> <ion-label position="floating">{{ 'USERNAME' | translate }}</ion-label>
           <ion-input  formControlName="nome"></ion-input>
-          <p ion-text class="text08" *ngIf="profiloFormModel.get('nome').touched && profiloFormModel.get('nome').invalid">
-            <ion-text color="danger">{{ 'NAME_REQUIRED' | translate }}</ion-text>
+          <p ion-text class="text08" *ngIf="profiloFormModel.get('username').touched && profiloFormModel.get('username').invalid">
+            <ion-text color="danger">{{ 'USERNAME_REQUIRED' | translate }}</ion-text>
           </p></ion-card-title>
 
         <ion-card-subtitle>Descrizione personale</ion-card-subtitle> // AGGIUNGERE A I18N

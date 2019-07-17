@@ -59,7 +59,7 @@ export class ProfiloutentePage implements OnInit {
                  this.lingue = this.linguaService.getLingue();
                  this.profiloFormModel = this.formBuilder.group({
                     foto: [''],
-                    nome: ['', Validators.compose([
+                    username: ['', Validators.compose([
                       Validators.required
                     ])],
                     descrizione: [''],
@@ -72,7 +72,7 @@ export class ProfiloutentePage implements OnInit {
       this.profiloFormModel.patchValue({linguaPreferita: lingua});
     }); // da modificare patchValue qui sotto
                  this.utenteService.getUtente().subscribe((utente) => {
-      this.profiloFormModel.patchValue({email: utente.email, telefono: utente.telefono});
+      this.profiloFormModel.patchValue({foto: utente.foto, username: utente.username, descrizione: utente.descrizione});
       this.utente = utente;
     });
   }
@@ -123,7 +123,7 @@ export class ProfiloutentePage implements OnInit {
     this.translateService.use(this.profiloFormModel.value.linguaPreferita);
     this.linguaService.updateLingua(this.profiloFormModel.value.linguaPreferita);
     this.utente.foto = this.profiloFormModel.value.foto;
-    this.utente.nome = this.profiloFormModel.value.nome;
+    this.utente.username = this.profiloFormModel.value.username;
     this.utente.descrizione = this.profiloFormModel.value.descrizione;
     this.utenteService.updateProfilo(this.utente).subscribe((nuovoUtente: Utente) => {
       this.navController.back();

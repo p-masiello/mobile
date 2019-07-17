@@ -7,13 +7,77 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-input class=inputsize placeholder="Username"></ion-input>
-  <ion-input class=inputsize placeholder="Nome" ></ion-input>
-  <ion-input class=inputsize placeholder="Cognome"></ion-input>
-  <ion-input class=inputsize placeholder="Email"></ion-input>
-  <ion-input class=inputsize placeholder="Password" type="password"></ion-input>
+  <form [formGroup]="signupFormModel">
 
-  <ion-button class="registrati" size="medium">Registrati</ion-button>
-  <ion-button class="facebook" size="medium">Facebook</ion-button>
+    <ion-input class=inputsize placeholder="Username"></ion-input>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        {{ 'USERNAME' | translate }}</ion-label>
+      <ion-input class=inputsize  type="email" formControlName="username"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="signupFormModel.get('username').touched && signupFormModel.get('username').invalid">
+      <ion-text color="danger">{{ 'USERNAME_REQUIRED' | translate }}</ion-text>
+    </p>
+
+
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        {{ 'Nome' | translate }}</ion-label>
+      <ion-input class=inputsize  type="email" formControlName="nome"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="signupFormModel.get('nome').touched && signupFormModel.get('nome').invalid">
+      <ion-text color="danger">{{ 'NAME_REQUIRED' | translate }}</ion-text>
+    </p>
+
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        {{ 'Cognome' | translate }}</ion-label>
+      <ion-input class=inputsize  type="email" formControlName="cognome"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="signupFormModel.get('cognome').touched && signupFormModel.get('cognome').invalid">
+      <ion-text color="danger">{{ 'SURNAME_REQUIRED' | translate }}</ion-text>
+    </p>
+
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        {{ 'Email' | translate }}</ion-label>
+      <ion-input class=inputsize  type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="signupFormModel.get('email').touched && signupFormModel.get('email').invalid">
+      <ion-text color="danger">{{ 'EMAIL_REQUIRED' | translate }}</ion-text>
+    </p>
+
+
+  <ion-input class=inputsize placeholder="Password" type="password"></ion-input>
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        {{ 'Password' | translate }}</ion-label>
+      <ion-input class=inputsize  type="password" formControlName="email"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="signupFormModel.get('password').touched && signupFormModel.get('password').invalid">
+      <ion-text color="danger">{{ 'EMAIL_REQUIRED' | translate }}</ion-text>
+    </p>
+
+
+
+
+
+
+    <ion-list>
+
+
+
+    </ion-list>
+    <div class="logbutcent">
+      <ion-button color="tertiary"  (click)="onSignup()" [disabled]="!signupFormModel.valid" tappable>{{ 'SIGNUP_BUTTON' | translate}}</ion-button>
+    </div>
+    <ion-button class="facebook" size="medium">Facebook</ion-button>
+  </form>
+
+
 
 </ion-content>

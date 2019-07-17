@@ -1,35 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Login
-    </ion-title>
+  <ion-toolbar><ion-buttons slot="start">
+    <ion-back-button  defaultHref="/"></ion-back-button>
+  </ion-buttons>
+    <ion-title align="center">Login</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content padding>
-
-  <ion-img cache="true" src="../../assets/musipr/LOGO2.JPG" id="logo"></ion-img>
-
-  <form #loginForm="ngForm">
+<img id=loginimage src="../assets/musipr/LOGO2.JPG" align="center">
+<ion-content>
+  <form [formGroup]="loginFormModel">
     <ion-list>
+      <ion-input  placeholder="Username"></ion-input>
 
-      <ion-item>
-        <ion-label floating>Username</ion-label>
-        <ion-input [(ngModel)]="utente.username" name="username" type="text" #username="ngModel" required></ion-input>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          {{ 'USERNAME' | translate }}</ion-label>
+        <ion-input class=inputsize  type="email" formControlName="username"></ion-input>
       </ion-item>
+      <p ion-text class="text08" *ngIf="loginFormModel.get('username').touched && loginFormModel.get('username').invalid">
+        <ion-text color="danger">{{ 'USERNAME_REQUIRED' | translate }}</ion-text>
+      </p>
 
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input [(ngModel)]="account.password" name="password" type="password"
-                   #password="ngModel" required></ion-input>
+      <ion-input placeholder="Password" type="password"></ion-input>
+      <div class="logbutcent">
+        <ion-button size="medium">Login</ion-button>
+      </div>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          {{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input class=inputsize color="tertiary" type="password" formControlName="password"></ion-input>
       </ion-item>
+      <p ion-text class="text08" *ngIf="loginFormModel.get('password').touched && loginFormModel.get('password').invalid">
+        <ion-text color="danger">{{ 'PASSWORD_REQUIRED' | translate }}</ion-text>
+      </p>
+
+
+
+        <ion-button  routerDirection="forward" routerLink="/signup" size="medium">Signup</ion-button>
+
+
 
     </ion-list>
-
-    <button ion-button round class="submit" color="primary" [disabled]="!loginForm.form.valid" (click)="submit(loginForm)">{{ 'LOGIN_BUTTON' | translate}}</button>
+    <div class="logbutcent">
+    <ion-button color="tertiary"  (click)="onLogin()" [disabled]="!loginFormModel.valid" tappable>{{ 'LOGIN_BUTTON' | translate}}</ion-button>
+    </div>
   </form>
+
   <ion-item>
     <p>{{ 'SIGNIN_MESSAGE' | translate }}</p>
-    <button ion-button round color="secondary" (click)="goToSignin()">{{ 'SIGNIN_BUTTON' | translate }}</button>
+    <button ion-button round color="tertiary" routerLink="/signup" routerDirection="forward">{{ 'SIGNIN_BUTTON' | translate }}</button>
   </ion-item>
 </ion-content>

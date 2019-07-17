@@ -33,7 +33,7 @@ export class EventoServiceService {
         return this.http.get<Evento>(apiURL);
     }
     findByCreatore(creatoreId: number): Observable<Evento[]> {
-        const apiURL = `${URL.EVENTI}/${creatoreId}`;
+        const apiURL = `${URL.CREATORI}/${creatoreId}`;
         return this.http.get<Evento[]>(apiURL);
     }
     createEvento(evento: Evento) {

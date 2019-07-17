@@ -6,7 +6,7 @@ export class Evento {
     nome: string;
     sottotitolo: string;
     descrizione: string;
-     data: Date;
+    data: Date;
     genere: GENERE;
     latitudine: string;
     longitudine: string;

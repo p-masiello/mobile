@@ -17,7 +17,7 @@ export class AcquistoPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.evento$ = this.eventoService.findById(parseInt(params.get('idevento'), 0));
+      this.evento$ = this.eventoService.findById(parseInt(params.get('id'), 0));
 
     });
   }

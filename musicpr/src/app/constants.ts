@@ -11,6 +11,7 @@ export const URL = {
     UTENTE: URL_BASE + '/utenti',
     FOTO: URL_BASE + '/foto',
     DONATORI: URL_BASE + '/eventi/genere/donatori',
+    CREATORI: URL_BASE + '/eventi/creatore',
 
 };
 

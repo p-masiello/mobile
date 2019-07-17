@@ -16,6 +16,8 @@ import {OverlayEventDetail} from '@ionic/core/dist/types/utils/overlays-interfac
 import {Utente} from '../../model/utente.model';
 import {ParamMap} from '@angular/router';
 import {UtenteServiceService} from '../../services/utente.service';
+import {Lingua, LinguaService} from '../../services/lingua.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 
@@ -42,6 +44,8 @@ export class ProfiloutentePage implements OnInit {
               private modalController: ModalController,
               private alertController: AlertController,
               private navParams: NavParams,
+              private linguaService: LinguaService,
+              private translateService: TranslateService,
               private eventoService: EventoServiceService,
               private utenteService: UtenteServiceService,
               private navController: NavController,
@@ -59,14 +63,14 @@ export class ProfiloutentePage implements OnInit {
                       Validators.required
                     ])],
                     descrizione: [''],
-      linguaPreferita: ['', Validators.compose([
-        Validators.required
-      ])]
-    });
+                   linguaPreferita: ['', Validators.compose([
+                      Validators.required
+                    ])]
+                  });
 
                  this.linguaService.getLinguaAttuale().subscribe((lingua) => {
       this.profiloFormModel.patchValue({linguaPreferita: lingua});
-    });
+    }); // da modificare patchValue qui sotto
                  this.utenteService.getUtente().subscribe((utente) => {
       this.profiloFormModel.patchValue({email: utente.email, telefono: utente.telefono});
       this.utente = utente;

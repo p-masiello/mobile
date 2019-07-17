@@ -9,10 +9,7 @@ import { Storage } from '@ionic/storage';
 import {map} from 'rxjs/operators';
 
 export interface Account {
-    name: string;
-    surname: string;
     username: string;
-    email: string;
     password: string;
 
 }
@@ -93,7 +90,7 @@ export class UtenteServiceService {
     }
 
     findByIdUtente(creatoreid: number): Observable<Utente> {
-        const apiURL = `${URL.EVENTI}/${creatoreid}`;
+        const apiURL = `${URL.CREATORI}/${creatoreid}`;
         return this.http.get<Utente>(apiURL);
     }
 

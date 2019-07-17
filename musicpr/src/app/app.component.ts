@@ -7,13 +7,14 @@ import {TranslateService} from '@ngx-translate/core';
 import {Utente} from './model/utente.model';
 import {BehaviorSubject} from 'rxjs';
 import {UtenteServiceService} from './services/utente.service';
+import {LinguaService} from "./services/lingua.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   private utente$: BehaviorSubject<Utente>;
 
 
@@ -22,6 +23,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private translate: TranslateService,
+    private linguaService: LinguaService,
     private utenteService: UtenteServiceService,
 
   ) {
@@ -39,7 +41,16 @@ export class AppComponent {
     });
   }
   initTranslate() {
-    this.translate.setDefaultLang('it');
-    this.translate.use('it');
+    // Set the default language for translation strings, and the current language.
+    const linguaPreferita = this.linguaService.getLinguaPreferita();
+    this.translate.setDefaultLang(linguaPreferita);
+    this.linguaService.getLinguaAttuale().subscribe((lingua: string) => {
+      if (lingua != null) {
+        this.translate.use(lingua);
+      } else {
+        this.translate.use(linguaPreferita);
+        this.linguaService.updateLingua(linguaPreferita);
+      }
+    });
   }
 }

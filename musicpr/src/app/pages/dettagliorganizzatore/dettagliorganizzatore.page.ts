@@ -15,7 +15,7 @@ export class DettagliorganizzatorePage implements OnInit {
   constructor(private utenteService: UtenteServiceService,
               private route: ActivatedRoute, ) { }
 
-  ngOnInit() {
+  ngOnInit() { // MI SA PROPRIO DA MODIFICARE
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.utente$ = this.utenteService.findByIdUtente(parseInt(params.get('evento.creatore.id'), 0));
     });

@@ -25,7 +25,7 @@
 
 
           <ion-thumbnail slot="start" >
-            <img [src]="evento.foto">
+            <img >[src]="evento.foto"
           </ion-thumbnail>
 
         <ion-label>
@@ -36,7 +36,7 @@
         </ion-label>
       </ion-item>
   </div>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createEvento()" routerDirection="root">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createEvento()" routerDirection="forward">
     <ion-fab-button color="white"  >
       <ion-icon  name="add"></ion-icon>
     </ion-fab-button>

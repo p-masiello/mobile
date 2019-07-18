@@ -22,7 +22,7 @@ export class TIPOLOGIA_EVENTO_A_PAGAMENTO {
     numerobiglietti: number;
 }
 // tslint:disable-next-line:class-name
-export class TIPOLOGIA_EVENTO_CROWFOUNDING {
+export class TIPOLOGIA_EVENTO_CROWDFOUNDING {
     sommarichiesta: number;
     sommaraggiunta: number;
     donatori: Utente;
@@ -31,6 +31,6 @@ export const TIPOLIGA_EVENTO_GRATUITO = 'GRATUITO';
 
 export class GENERE {
     pagamento = TIPOLOGIA_EVENTO_A_PAGAMENTO;
-    crowfounding = TIPOLOGIA_EVENTO_CROWFOUNDING;
+    crowdfounding = TIPOLOGIA_EVENTO_CROWDFOUNDING;
     gratuito = TIPOLIGA_EVENTO_GRATUITO;
 }

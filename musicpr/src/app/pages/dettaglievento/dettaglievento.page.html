@@ -39,7 +39,7 @@
   </ion-card>
 
   <ion-button *ngIf="evento.genere.pagamento" color="tertiary" [routerLink]="['/acquisto', evento.id]">{{"BUY_TITLE"| translate}}</ion-button>
-    <ion-button *ngIf="evento.genere.crowfounding"  color="tertiary" [routerLink]="['/dona', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
+    <ion-button *ngIf="evento.genere.crowdfounding"  color="tertiary" [routerLink]="['/dona', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
     <ion-button *ngIf="evento.genere.gratuito" color="tertiary" (click)="addPart()" [disabled]="disableButton">{{"TAKE_PART"| translate}}</ion-button>
 
 </ion-content>

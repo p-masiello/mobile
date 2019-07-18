@@ -20,7 +20,7 @@
       <ion-img [src]="evento.foto"></ion-img>
     </ion-slide>
     </ion-slides> // SICURAMENTE DA MODIFICARE
-    <p>{{evento.genere.crowfounding.sommaraggiunta / evento.genere.crowfounding.sommarichiesta}}</p> //da vedere collegamento
+    <p>{{evento.genere.crowdfounding.sommaraggiunta / evento.genere.crowfounding.sommarichiesta}}</p> //da vedere collegamento
     <ion-progress-bar color="tertiary" mode="md" type="determinate" value="0.5"></ion-progress-bar>//da vedere collegamento value non importante
     <ion-button color="tertiary" class="dona" routerDirection="forward" [routerLink]="['/pagamento', evento.id]">{{"CROW_TITLE"| translate}}</ion-button>
 

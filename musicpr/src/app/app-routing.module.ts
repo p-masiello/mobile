@@ -64,6 +64,11 @@ const routes: Routes = [
   },
   { path: 'tab',
     loadChildren: './pages/tab/tab.module#TabPageModule' },
+  {
+    path: 'chat/partecipant.id',
+    loadChildren: './pages/chat/chat.module#ChatPageModule',
+    canActivateChild: [AuthGuard]},
+
 ];
 
 @NgModule({

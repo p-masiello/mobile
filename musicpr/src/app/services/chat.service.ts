@@ -1,20 +1,29 @@
-/*import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
-// tutta roba da copiare nei service
-
-// import {URL} from '../constants';
-import { Evento } from '../model/evento.model';
-import {Observable} from 'rxjs';
+import { URL } from '../constants';
+import { Chat } from '../model/chat.model';
+import { Messaggio } from '../model/messaggio.model';
 
 @Injectable()
-export class EventoService {
+export class ChatService {
+
     constructor(private http: HttpClient) {
-
     }
-    //     list(): Observable<Evento[]> {
-    //    let url = 'http://localhost:8080/musicpr/api/eventi’; di questo non ci sarà bisogno probabilmente
-    //    return this.http.get<Evento[]>(URL+eventi);
-    //      }
 
-}*/
+    sendMessage(m: Messaggio) {
+        return this.http.post(URL.STORE.MESSAGE, m);
+    }
+
+
+    getChatList(userId: number): Observable<Chat[]> {
+        const apiURL = `${URL.CHATLIST}/${userId}`;
+        return this.http.get<Array<Chat>>(apiURL);
+    }
+
+    getMessages(opId: number, partId: number, page: number): Observable<Messaggio[]> {
+        const apiURL = `${URL.CHAT}/${opId}/${partId}/${page}`;
+        return this.http.get<Array<Messaggio>>(apiURL);
+    }
+}

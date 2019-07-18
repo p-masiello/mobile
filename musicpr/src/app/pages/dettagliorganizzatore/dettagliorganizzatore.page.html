@@ -16,7 +16,7 @@
   <img [src]="utente.foto">
 </ion-avatar>
 <ion-card-header> // CONTROLLARE ROUTIERLINK
-  <ion-button color="tertiary" [routerLink]="['/chat', utente.id]" routerDirection="forward">{{"SEND_MESSAGE"| translate}}</ion-button>
+  <ion-button color="tertiary" [routerLink]="['/chat', partecipant.id]" routerDirection="forward">{{"SEND_MESSAGE"| translate}}</ion-button>
 
   <ion-card-title>{{utente.nome}}</ion-card-title>
 

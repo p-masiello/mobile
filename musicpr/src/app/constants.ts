@@ -1,7 +1,10 @@
 export const USE_PROXY = true;
 
 export const URL_BASE = USE_PROXY ? 'api' : 'http://localhost:8080/musicprs/api';
-// DA MODFICIARE
+export const STORE_PATH = URL_BASE + '/store';
+export const UPDATE_PATH = URL_BASE + '/update';
+export const DELETE_PATH = URL_BASE + '/delete';
+
 export const URL = {
     LOGIN: URL_BASE + '/login',
     LOGOUT: URL_BASE + '/logout',
@@ -12,6 +15,14 @@ export const URL = {
     FOTO: URL_BASE + '/foto',
     DONATORI: URL_BASE + '/eventi/genere/donatori',
     CREATORI: URL_BASE + '/eventi/creatore',
+    CHATLIST: URL_BASE + '/chatlist',
+    CHAT: URL_BASE + '/chat',
+    SIGNIN: URL_BASE + '/signin',
+    STORE: {
+        MESSAGE: STORE_PATH + '/message',
+        CHAT: STORE_PATH + '/chat',
+        POSITION: STORE_PATH + '/position'
+    },
 
 };
 

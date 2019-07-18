@@ -8,6 +8,7 @@ import {Evento} from '../model/evento.model';
 import { Storage } from '@ionic/storage';
 import {map} from 'rxjs/operators';
 
+
 export interface Account {
     username: string;
     password: string;
@@ -92,6 +93,9 @@ export class UtenteServiceService {
     findByIdUtente(creatoreid: number): Observable<Utente> {
         const apiURL = `${URL.CREATORI}/${creatoreid}`;
         return this.http.get<Utente>(apiURL);
+    }
+    signin(account: Account) {
+        return this.http.post(URL.SIGNIN, account);
     }
 
 }

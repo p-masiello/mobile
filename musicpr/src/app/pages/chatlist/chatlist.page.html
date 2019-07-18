@@ -6,17 +6,17 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list *ngFor="let chat of chats$ | async"  [routerLink]="['/chat', chat.id]" routerDirection="forward" detail="true">
+  <ion-list *ngFor="let chat of chats$ | async"  [routerLink]="['/chat', chat.partecipant.id]" routerDirection="forward" detail="true">
 <ion-item>
 
 
 
     <ion-avatar slot="start">
-      <img [src]="chat.destinatario.foto">
+      <img [src]="chat.partecipant.foto">
     </ion-avatar> //vedere collegamento immagine
 
     <ion-label>
-      <p>{{chat.destinatario.nome}}</p>
+      <p>{{chat.partecipant.nome}}</p>
     </ion-label>
 
 </ion-item>
